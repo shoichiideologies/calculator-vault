@@ -4,7 +4,6 @@ import java.awt.*;
 public class Frame extends JFrame {
 
     public Frame() {
-        // Set frame size and layout
         setSize(400, 480);
         setLayout(new BorderLayout(10, 10));
         setUndecorated(true);
@@ -16,14 +15,13 @@ public class Frame extends JFrame {
         GridBagConstraints gbc = new GridBagConstraints();
         gbc.gridx = 0;
         gbc.gridy = 0;
-        gbc.weightx = 1.0; // Allow the text field to expand horizontally
-        gbc.fill = GridBagConstraints.HORIZONTAL; // Make the text field fill the available space
+        gbc.weightx = 1.0; 
+        gbc.fill = GridBagConstraints.HORIZONTAL;
         gbc.anchor = GridBagConstraints.WEST;
         gbc.insets = new Insets(10, 10, 10, 10);
 
-        // Create the results text field and set its preferred size to make it thicker
         JTextField results = new JTextField(2);
-        results.setPreferredSize(new Dimension(0, 50)); // Set the height to 50 pixels
+        results.setPreferredSize(new Dimension(0, 50)); 
         north.add(results, gbc);
 
         JButton clear = new JButton("C");
@@ -47,7 +45,6 @@ public class Frame extends JFrame {
         JButton equals = new JButton("=");
         JButton add = new JButton("+");
 
-        // Add buttons to the center panel
         center.add(clear);
         center.add(integer);
         center.add(percent);
@@ -71,17 +68,14 @@ public class Frame extends JFrame {
         JPanel west = new JPanel();
         west.setBackground(Color.LIGHT_GRAY);
 
-        // Create and configure the east panel
         JPanel east = new JPanel();
         east.setBackground(Color.LIGHT_GRAY);
 
-        // Add panels to the frame
         add(north, BorderLayout.NORTH);
         add(center, BorderLayout.CENTER);
         add(west, BorderLayout.WEST);
         add(east, BorderLayout.EAST);
 
-        // Set frame properties
         setVisible(true);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
